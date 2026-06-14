@@ -1,0 +1,7 @@
+timer.dat
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
