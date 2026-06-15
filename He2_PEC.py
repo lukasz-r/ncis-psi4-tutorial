@@ -10,7 +10,10 @@ file_out = "He2_PEC.out"
 file_results = "He2_PEC.txt"
 file_plot = "He2_PEC.pdf"
 
+pd.options.display.float_format = "{:.4e}".format
+
 psi4.set_output_file(file_out)
+psi4.set_memory("2 GB")
 distances = np.arange(2, 8, .2)
 
 psi4.set_options({

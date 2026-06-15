@@ -10,6 +10,8 @@ file_out = "Ar-HF_PES.out"
 file_results = "Ar-HF_PES.txt"
 file_plot = "Ar-HF_PES.pdf"
 
+pd.options.display.float_format = "{:.4e}".format
+
 psi4.set_output_file(file_out)
 psi4.set_options({
     "basis": "aug-cc-pVTZ",

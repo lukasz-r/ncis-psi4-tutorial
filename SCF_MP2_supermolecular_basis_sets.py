@@ -3,8 +3,11 @@
 import pandas as pd
 import psi4
 
+file_out = "SCF_MP2_supermolecular_basis_sets.out"
+
 pd.options.display.float_format = "{:.4e}".format
 
+psi4.set_output_file(file_out)
 psi4.set_memory("2 GB")
 
 dimer_names = ["He-Ne", "He-Li+"]
@@ -36,5 +39,5 @@ for dimer in dimers:
 
     table = pd.DataFrame(Eints, index=basis_sets, columns=["Eint_HF", "Eint_MP2"])
     table.index.name = "basis_set"
-    file_table = dimer.name() + ".txt"
-    table.to_csv(file_table, sep="\t")
+    file_results = dimer.name() + ".txt"
+    table.to_csv(file_results, sep="\t")
